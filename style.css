@@ -89,11 +89,12 @@ li {
   max-width: 1180px;
   margin-inline: auto;
   overflow: hidden;
+  padding: 20px;
 }
 
 nav {
-  background-color: #f3faff;
-  box-shadow: 0 0 4px #bbd0e2;
+  background-color: #8289c8;
+  box-shadow: 2px 2px 6px #000;
   position: fixed;
   top: 0;
   z-index: 99;
@@ -105,9 +106,13 @@ nav {
   justify-content: space-between;
   padding-block: 8px;
 }
-
-.company-logo img {
-  width: 120px;
+.nav-links{
+  gap: 35px;
+}
+.logo  {
+  color: #0d2233;
+  font-size: 20px;
+  font-weight: 700;
 }
 
 .nav-links ul {
@@ -115,6 +120,7 @@ nav {
 }
 
 .hover-link {
+  font-weight: 500;
   cursor: pointer;
 }
 
@@ -160,25 +166,28 @@ nav {
 
 main {
   padding-block: 20px;
-  margin-top: 80px;
+  margin-top: 40px;
 }
 
 .cards-container {
   justify-content: space-between;
   flex-wrap: wrap;
-  row-gap: 20px;
+  gap: 15px;
   align-items: start;
+  width: 100%;
+
 }
 
 .card {
-  width: 360px;
-  min-height: 400px;
-  box-shadow: 0 0 4px #d4ecff;
+  margin-top: 10px;
+  width: 30%;
+  min-height: 350px;  
   border-radius: 4px;
   cursor: pointer;
   background-color: #fff;
   overflow: hidden;
   transition: all 0.3s ease;
+  box-shadow: 2px 2px 6px #000;
 }
 
 .card:hover {
@@ -190,7 +199,7 @@ main {
 .card-header img {
   width: 100%;
   height: 180px;
-  object-fit: cover;
+  object-fit: cover ;
 }
 
 .card-content {
@@ -200,3 +209,57 @@ main {
 .news-source {
   margin-block: 12px;
 }
+.ham{
+  display: none;
+}
+@media screen and (max-width:900px){
+  main{
+    padding-block: -25px;
+    margin-top: 2px;
+    margin: 0 auto;    
+  }
+  nav{
+    position: relative;
+
+  }
+  .cards-container{
+    gap: 10px;
+  }
+  .card{
+    width: 48%;
+  }
+  .ham{
+    cursor: pointer;
+    display: block;
+  }
+  .nav-links{
+    gap: 10px;
+    padding: 20px;
+    flex-direction: column;
+    position: absolute;
+    top: 90%;
+    left: -100%;
+    background-color: white;
+    width: 100%;
+    transition: all 0.5s cubic-bezier(0.6, 0.04, 0.98, 0.335);
+  }
+  .nav-links ul{
+    flex-direction: column;
+  }
+ 
+}
+@media screen and (max-width:500px){
+  .cards-container{
+    gap: 10px;
+  }
+  .card{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
+  .news-desc{
+    max-height: 320px;
+  }
+  
+}
+
